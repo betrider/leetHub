@@ -5,13 +5,13 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        head = ListNode()
-        curr = head
+        head = ListNode() #[0] 위치
+        curr = head 
         while l1 and l2:
-            if l1 and l2 and l1.val <= l2.val:
+            if l1.val <= l2.val:
                 curr.next = l1
                 l1 = l1.next			
-            elif l1 and l2 and l2.val <= l1.val:
+            elif l2.val <= l1.val:
                 curr.next = l2
                 l2 = l2.next
             curr = curr.next
