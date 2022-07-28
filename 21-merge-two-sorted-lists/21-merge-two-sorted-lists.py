@@ -6,14 +6,14 @@
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         head = ListNode() #[0] 위치
-        curr = head 
+        temp = head 
         while l1 and l2:
             if l1.val <= l2.val:
-                curr.next = l1
+                temp.next = l1
                 l1 = l1.next			
             elif l2.val <= l1.val:
-                curr.next = l2
+                temp.next = l2
                 l2 = l2.next
-            curr = curr.next
-        curr.next = l1 or l2
+            temp = temp.next
+        temp.next = l1 or l2
         return head.next
